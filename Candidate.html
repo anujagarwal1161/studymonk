@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recruitment Solution | Candidate Search</title>
+    <link rel="stylesheet" type="text/css" href="job.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="Candidate.html">Register</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="search-section">
+      <div class="container">
+        <h2>Candidate Search</h2>
+        <form>
+          <input type="text" placeholder="Location" />
+          <select>
+            <option value="" disabled selected>Job Role</option>
+            <option value="developer">Developer</option>
+            <option value="designer">Designer</option>
+            <option value="manager">Manager</option>
+          </select>
+          <button type="submit">Search</button>
+        </form>
+        <div class="candidate-list">
+          <div class="candidate-card">
+            <h3>John Doe</h3>
+            <p>Job Role: Developer</p>
+            <p>Location: New York</p>
+            <button class="rank-button">Rank</button>
+          </div>
+          <div class="candidate-card">
+            <h3>Jane Smith</h3>
+            <p>Job Role: Designer</p>
+            <p>Location: San Francisco</p>
+            <button class="rank-button">Rank</button>
+          </div>
+          <!-- Add more candidate cards here -->
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p>&copy; 2023 Recruitment Solution. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- ...HTML code... -->
+
+    <script>
+      // Rank a candidate when the rank button is clicked
+      const rankButtons = document.querySelectorAll(".rank-button");
+      rankButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const candidateName =
+            button.previousElementSibling.previousElementSibling.textContent;
+          alert(`Ranking candidate: ${candidateName}`);
+        });
+      });
+    </script>
+
+    <!-- ...HTML code... -->
+  </body>
+</html>
